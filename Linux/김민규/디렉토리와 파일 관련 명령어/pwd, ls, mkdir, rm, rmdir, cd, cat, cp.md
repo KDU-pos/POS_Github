@@ -105,3 +105,44 @@
   - cd /etc/ : '/' 아래 etc 디렉터리로 이동(절대경로)
   - cd /home -> cd user01/ : '/' 아래 home 디렉터리에서 user01의 홈 디렉터리로 이동
     - 하위 디렉터리로 이동할 때에는 절대경로 대신 상대경로가 효율적이다.
+
+<br>
+
+## cat
+
+- ### 기능
+  - 지정한 파일의 내용을 텍스트로 출력한다. 
+- ### 형식
+  - cat [option] [file]
+- ### 사용 예
+  - cat text01
+  - cd /bin -> cat ls
+
+<br>
+
+## cp
+
+- ### 기능
+  - 파일이나 디렉터리를 복사
+  - 파일이나 디렉터리를 백업할 때 활용 가능하다.
+- ### 형식
+  - cp [Option] [File(Directory)] [File2(Directory)]
+  - 왼쪽의 파일을 오른쪽으로 복사
+  - 옵션이 없으면 파일만 복사할 수 있다.
+- ### 옵션
+  - -i : 파일2가 존재하면 덮어쓸 것인지 물어본다.
+  - -r : 디렉터리를 복사할 때 지정한다. 이때 디렉터리 하위파일과 디렉터리까지 복사된다.
+- ### 사용 예
+  - cp dir/test.txt dir2/
+    - dir 하위의 test.txt 파일을 dir2 디렉터리에 복사
+  - cp -r dir dir2
+    - dir 디렉터리를 dir2 디렉터리에 복사
+    - dir 디렉터리는 dir2의 하위 디렉터리가 된다.
+  - cd /bin -> cp ls backupfile -> rm ls -> cp backupfile ls 
+    - /bin 디렉터리의 ls 명령어 파일을 backupfile 파일에 복사한다. 
+      - backupfile 파일은 /bin 디렉터리에서 존재하지 않으면 자동으로 생성된다. 
+    - /bin 디렉터리의 ls 명령어 파일을 삭제한다.
+      - ls 명령어를 사용할 수 없지만, backupfile 파일을 명령어로 사용하여 기존 ls의 기능을 사용할 수 있다. 
+    - /bin 디렉터리의 backupfile 파일을 ls 파일에 복사한다.
+      - backupfile에 백업해 두었던 ls 파일 데이터를 다시 ls 파일에 복사한다. 
+      - ls의 기능을 하는 파일이 두 개 존재하게 되었다. 
